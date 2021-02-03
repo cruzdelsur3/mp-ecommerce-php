@@ -131,7 +131,10 @@
                                             <?php echo 'Cantidad: ' . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <?php echo src\Mp::getBotonPago($_POST); ?>
+                                    <?php
+                                        $mp = new src\Mp();
+                                        echo $mp->getBotonPago($_POST);
+                                    ?>
                                 </div>
                             </div>
                         </div>
