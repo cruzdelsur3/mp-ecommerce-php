@@ -1,5 +1,7 @@
 <?php
 
+file_put_contents('sucess.log', print_r($_REQUEST, true));
+
 if (!isset($_POST['payment_id'])) {
     header("Location: index.php");
     die();
