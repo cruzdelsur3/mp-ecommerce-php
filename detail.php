@@ -132,7 +132,7 @@
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo "$" . $_POST['price'] ?>
+                                            <?php echo "$" . number_format($_POST['price'], 2, ',', '.') ?>
                                         </h3>
                                         <h3 >
                                             <?php echo 'Cantidad: ' . $_POST['unit'] ?>
