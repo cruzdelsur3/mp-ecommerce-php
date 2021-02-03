@@ -1,3 +1,4 @@
+<?php include_once ('./vendor/autoload.php'); ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -130,7 +131,7 @@
                                             <?php echo 'Cantidad: ' . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <?php echo src\Mp::getBotonPago($_POST); ?>
                                 </div>
                             </div>
                         </div>
