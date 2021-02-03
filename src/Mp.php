@@ -86,7 +86,7 @@ codigo postal: 1111*/
 
         $preference->external_reference = 'marcos.botta@gmail.com';
         $preference->notification_url = "{$baseUrl}/webhook.php";
-        $preference->auto_return = 'approved'; // redirige automaticamente a la pagina luego de un pago exitoso
+
 
         $backUrlSuccess = "{$baseUrl}/success.php";
         $backUrlFail = "{$baseUrl}/fail.php";
@@ -100,11 +100,13 @@ codigo postal: 1111*/
             'failure' => $backUrlFail,
             'pending' => $backUrlPending,
         ];
+        $preference->auto_return = 'approved'; // redirige automaticamente a la pagina luego de un pago exitoso
 
         $preference->payment_methods = array(
             "excluded_payment_methods" => array(
                 array("id" => "amex")
-            )
+            ),
+            "installments" => 6
         );
 
 
