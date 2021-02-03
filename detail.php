@@ -1,6 +1,8 @@
 <?php include_once ('./vendor/autoload.php'); ?>
 <?php
-    if (!isset($_POST['price'])) {
+    if (!isset($_POST['title']) ||
+        !isset($_POST['unit']) ||
+        !isset($_POST['price'])) {
         header("Location: index.php");
         die();
     }
