@@ -40,15 +40,15 @@ class Mp
         $item->id = $this->orderId;
         $item->title = $settings['title'];
         $item->description = 'Dispositivo móvil de Tienda e-commerce';
-        $img = preg_replace('~\.\/~', '',$settings['img']);
-        $item->picture_url = "{$baseUrl}/{$img}";
+        $imgUrl = preg_replace('~\.\/~', '',$settings['img']);
+        $item->picture_url = "{$baseUrl}/{$imgUrl}";
         $item->quantity = $settings['unit'];
         $item->unit_price = $settings['price'];
         $items[] = $item;
 
         $preference->items = $items;
         $preference->external_reference = 'marcos.botta@gmail.com';
-        $preference->notification_url = "{$baseUrl}/webhook.php";
+        $preference->notification_url = "{$baseUrl}webhook.php";
 
 
         $preference->payment_methods = array(
@@ -58,13 +58,14 @@ class Mp
         );
         $preference->save();
 
-        $backUrl = "{$baseUrl}/success.php";
+        $backUrl = "{$baseUrl}success.php";
 
         return '
 <div class="text-center">
 <form action="' . $backUrl  . '" method="POST">
   <script
    src="' . $this->urlChekoutJs . '"
+   data-button-label="Pagar la compra"
    data-preference-id="' . $preference->id . '">
   </script>
 </form>
