@@ -103,7 +103,7 @@ codigo postal: 1111*/
 
         $preference->payment_methods = array(
             "excluded_payment_types" => array(
-                array("id" => "ticket")
+                array("id" => "amex")
             )
         );
 
