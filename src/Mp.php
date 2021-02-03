@@ -33,18 +33,22 @@ class Mp
         $preference = new Preference();
 
 
-        $order_id = $this->orderId;
+        $dirName = pathinfo($_SERVER['REQUEST_URI'], PATHINFO_DIRNAME);
+        $baseUrl = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}{$dirName}";
+
         $item = new Item();
+        $item->id = $this->orderId;
         $item->title = $settings['title'];
+        $item->description = 'Dispositivo móvil de Tienda e-commerce';
+        $img = preg_replace('~\.\/~', '',$settings['img']);
+        $item->picture_url = "{$baseUrl}/{$img}";
         $item->quantity = $settings['unit'];
         $item->unit_price = $settings['price'];
         $items[] = $item;
 
         $preference->items = $items;
-        $preference->external_reference = $order_id;
-        $dirName = pathinfo($_SERVER['REQUEST_URI'], PATHINFO_DIRNAME);
-
-        $preference->notification_url = "{$_SERVER['SERVER_NAME']}{$dirName}/webhook.php";
+        $preference->external_reference = 'marcos.botta@gmail.com';
+        $preference->notification_url = "{$baseUrl}/webhook.php";
 
 
         $preference->payment_methods = array(
