@@ -99,6 +99,7 @@ codigo postal: 1111*/
 
         $backUrl = "{$baseUrl}/success.php";
 
+        var_dump($preference);
 
 
         return '
