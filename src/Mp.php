@@ -88,6 +88,19 @@ codigo postal: 1111*/
         $preference->notification_url = "{$baseUrl}/webhook.php";
         $preference->auto_return = 'approved'; // redirige automaticamente a la pagina luego de un pago exitoso
 
+        $backUrlSuccess = "{$baseUrl}/success.php";
+        $backUrlFail = "{$baseUrl}/fail.php";
+        $backUrlPending = "{$baseUrl}/pending.php";
+
+
+
+        // echo $backUrl;
+        $preference->back_urls = [
+            'success' => $backUrlSuccess,
+            'failure' => $backUrlFail,
+            'pending' => $backUrlPending,
+        ];
+
         $preference->payment_methods = array(
             "excluded_payment_types" => array(
                 array("id" => "ticket")
@@ -97,14 +110,14 @@ codigo postal: 1111*/
 
         $preference->save();
 
-        $backUrl = "{$baseUrl}/success.php";
+
 
         var_dump($preference);
 
 
         return '
 <div class="text-center">
-<form action="' . $backUrl  . '" method="POST">
+<form action="' . $backUrlSuccess  . '" method="POST">
   <script
    src="' . $this->urlChekoutJs . '"
    data-button-label="Pagar la compra"
