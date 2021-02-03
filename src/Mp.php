@@ -102,7 +102,6 @@ codigo postal: 1111*/
 
 
         return '
-https://www.mercadopago.com.ar/checkout/v1/payment/modal
 <div class="text-center">
 <form action="' . $backUrl  . '" method="POST">
   <script
