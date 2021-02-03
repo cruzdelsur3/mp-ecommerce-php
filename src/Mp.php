@@ -3,6 +3,7 @@
 namespace src;
 
 use MercadoPago\Item;
+use MercadoPago\Payer;
 use MercadoPago\Preference;
 use MercadoPago\SDK;
 
@@ -27,7 +28,7 @@ class Mp
 
 
         SDK::setAccessToken($this->token);
-
+        SDK::setIntegratorId('dev_24c65fb163bf11ea96500242ac130004');
 
         // Crea un objeto de preferencia
         $preference = new Preference();
@@ -47,20 +48,61 @@ class Mp
         $items[] = $item;
 
         $preference->items = $items;
-        $preference->external_reference = 'marcos.botta@gmail.com';
-        $preference->notification_url = "{$baseUrl}webhook.php";
 
+
+
+
+        /*
+         *  DATOS PAGADOR
+         * Nombre y Apellido: Lalo Landa
+Email: test_user_63274575@testuser.com
+clave mp: qatest2417
+tel 11  22223333
+direccion false 123
+codigo postal: 1111*/
+
+        // $payer = new Payer();
+        $payer = new Payer();
+        $payer->name = "Lalo";
+        $payer->surname = "Landa";
+        $payer->email = "test_user_63274575@testuser.com";
+        $payer->phone = [
+            "area_code" => "11",
+            "number" => "22223333"
+        ];
+
+        /*$payer->identification = array(
+            "type" => "DNI",
+            "number" => "12345678"
+        );*/
+
+        $payer->address = [
+            "street_name" => "false",
+            "street_number" => 123,
+            "zip_code" => "1111",
+        ];
+
+        $preference->payer = $payer;
+
+        $preference->external_reference = 'marcos.botta@gmail.com';
+        $preference->notification_url = "{$baseUrl}/webhook.php";
+        $preference->auto_return = 'approved'; // redirige automaticamente a la pagina luego de un pago exitoso
 
         $preference->payment_methods = array(
             "excluded_payment_types" => array(
                 array("id" => "ticket")
             )
         );
+
+
         $preference->save();
 
-        $backUrl = "{$baseUrl}success.php";
+        $backUrl = "{$baseUrl}/success.php";
+
+
 
         return '
+https://www.mercadopago.com.ar/checkout/v1/payment/modal
 <div class="text-center">
 <form action="' . $backUrl  . '" method="POST">
   <script
