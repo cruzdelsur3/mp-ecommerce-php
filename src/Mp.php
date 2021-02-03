@@ -58,12 +58,11 @@ class Mp
         );
         $preference->save();
 
-
-
+        $backUrl = "{$baseUrl}/success.php";
 
         return '
 <div class="text-center">
-<form action="/mercado-pago-procesar-pago.php" method="POST">
+<form action="' . $backUrl  . '" method="POST">
   <script
    src="' . $this->urlChekoutJs . '"
    data-preference-id="' . $preference->id . '">
