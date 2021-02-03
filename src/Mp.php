@@ -9,7 +9,10 @@ use MercadoPago\SDK;
 class Mp
 {
     private $token = 'APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398';
+    private $urlChekoutJs = 'https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js';
     private $orderId = '1234';
+
+
 
 
 
@@ -58,7 +61,7 @@ class Mp
 <div class="text-center">
 <form action="/mercado-pago-procesar-pago.php" method="POST">
   <script
-   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+   src="' . $this->urlChekoutJs . '"
    data-preference-id="' . $preference->id . '">
   </script>
 </form>
