@@ -3,3 +3,5 @@
 /.idea/modules.xml
 /.idea/mp-ecommerce-php.iml
 /.idea/vcs.xml
+/vendor/
+/.idea/
