@@ -1,19 +1,19 @@
 <?php
 
 
-print_r($_POST);
+/*print_r($_POST);
 echo '<hr>';
 print_r($_GET);
 echo '<hr>';
 print_r($_REQUEST);
-echo '<hr>';
+echo '<hr>';*/
 
 /*if (!isset($_POST['payment_id'])) {
     header("Location: index.php");
     die();
 }*/
 
-$titulo = '';
+$titulo = 'Pago rechazado';
 $detalle = '';
 
 if (isset($_GET['payment_status_detail']) &&
