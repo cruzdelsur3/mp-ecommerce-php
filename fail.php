@@ -2,6 +2,11 @@
 
 
 print_r($_POST);
+echo '<hr>';
+print_r($_GET);
+echo '<hr>';
+print_r($_REQUEST);
+echo '<hr>';
 
 /*if (!isset($_POST['payment_id'])) {
     header("Location: index.php");
