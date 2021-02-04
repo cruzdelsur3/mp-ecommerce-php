@@ -9,7 +9,7 @@ $dateTime = date('Y-m-d H:i:s');
 $body = file_get_contents('php //input');
 
 $mp = new src\Mp();
-$jsonPayment = $mp->getPaymentJson('13471893690', 'payment');
+$jsonPayment = $mp->getPaymentJson($_REQUEST['data_id'], $_REQUEST['topic']);
 
 // echo var_dump(json_decode($jsonPayment)); die();
 
@@ -17,6 +17,7 @@ $log = "
 <br>
 <hr>
 DATETIME: {$dateTime}<BR>
+https://api.mercadopago.com/v1/payments/{id}?access_token={token}
 REQUEST<BR>
 {$request}<br>
 <br>
