@@ -1,12 +1,12 @@
 <?php
 
 
-/*print_r($_POST);
+print_r($_POST);
 echo '<hr>';
 print_r($_GET);
 echo '<hr>';
 print_r($_REQUEST);
-echo '<hr>';*/
+echo '<hr>';
 
 if (isset($_POST['back_url'])) {
     $goTo = $_POST['back_url'];
@@ -18,10 +18,10 @@ if (isset($_POST['back_url'])) {
 }
 
 
-/*if (!isset($_POST['payment_id'])) {
+if (!isset($_POST['payment_id'])) {
     header("Location: index.php");
     die();
-}*/
+}
 
 $titulo = '';
 $detalle = '';
