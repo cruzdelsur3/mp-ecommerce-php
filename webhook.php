@@ -6,10 +6,14 @@ $request = print_r($_REQUEST, true);
 $post = print_r($_POST, true);
 $get = print_r($_GET, true);
 $dateTime = date('Y-m-d H:i:s');
-$body = file_get_contents('php //input');
 
 $mp = new src\Mp();
-$jsonPayment = $mp->getPaymentJson($_REQUEST['data_id'], $_REQUEST['topic']);
+$jsonPayment = 'no llama';
+if (isset($_REQUEST['data_id']) &&
+    isset($_REQUEST['topic'])) {
+    $jsonPayment = $mp->getPaymentJson($_REQUEST['data_id'], $_REQUEST['topic']);
+}
+
 
 // echo var_dump(json_decode($jsonPayment)); die();
 
@@ -29,9 +33,6 @@ GET<BR>
 <br>
 JSON<BR>
 {$jsonPayment}<br>
-<br>
-BODY<BR>
-{$body}<br>
 <br>";
 
 
