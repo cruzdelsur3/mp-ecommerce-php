@@ -2,6 +2,8 @@
 
 include_once ('./vendor/autoload.php');
 
+date_default_timezone_set('America/Argentina/Buenos_Aires');
+
 $request = print_r($_REQUEST, true);
 $post = print_r($_POST, true);
 $get = print_r($_GET, true);
