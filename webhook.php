@@ -11,9 +11,9 @@ $dateTime = date('Y-m-d H:i:s');
 
 $mp = new src\Mp();
 $jsonPayment = 'no llama';
-if (isset($_REQUEST['data_id']) &&
+if (isset($_REQUEST['id']) &&
     isset($_REQUEST['topic'])) {
-    $jsonPayment = $mp->getPaymentJson($_REQUEST['data_id'], $_REQUEST['topic']);
+    $jsonPayment = $mp->getPaymentJson($_REQUEST['id'], $_REQUEST['topic']);
 }
 
 
