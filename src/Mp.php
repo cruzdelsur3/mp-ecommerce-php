@@ -116,6 +116,7 @@ codigo postal: 1111*/
 
         // var_dump($preference);
 
+        return '<a href="' . $preference->init_point . '">Pagar la compra</a>';
 
         return '
 <div class="text-center">
