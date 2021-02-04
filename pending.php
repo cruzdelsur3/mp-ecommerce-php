@@ -30,7 +30,8 @@ if ($_REQUEST['status'] === 'pending' &&
     $_REQUEST['payment_type'] === 'ticket') {
     $titulo = 'Pago pendiente';
     $detalle = "<p>Se genergó el cupon de pago. Siga las instrucciones que enviamos a su email para finalizar la compra.</p>
- <p><strong>Código Mercado Pago:</strong> {$_POST['payment_id']}</p>";
+<br>
+ <p><strong>Código Mercado Pago:</strong> {$_POST['$_REQUEST']}</p>";
 }
 
 
