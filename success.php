@@ -18,10 +18,7 @@ if (isset($_POST['back_url'])) {
 }
 
 
-if (!isset($_POST['payment_id'])) {
-    header("Location: index.php");
-    die();
-}
+
 
 $titulo = '';
 $detalle = '';
