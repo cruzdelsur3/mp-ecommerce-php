@@ -127,7 +127,6 @@ codigo postal: 1111*/
   </script>
 </form>
 </div><br>';
-        return '<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>';
     }
 
 

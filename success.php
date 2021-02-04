@@ -1,12 +1,22 @@
 <?php
 
 
-print_r($_POST);
+/*print_r($_POST);
 echo '<hr>';
 print_r($_GET);
 echo '<hr>';
 print_r($_REQUEST);
-echo '<hr>';
+echo '<hr>';*/
+
+if (isset($_POST['back_url'])) {
+    $goTo = $_POST['back_url'];
+    if (isset($_POST['payment_status_detail'])) {
+        $goTo = "{$goTo}&payment_status_detail={$_POST['payment_status_detail']}&from=success";
+    }
+    header("Location: {$goTo}");
+    die();
+}
+
 
 /*if (!isset($_POST['payment_id'])) {
     header("Location: index.php");

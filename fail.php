@@ -1,12 +1,12 @@
 <?php
 
 
-print_r($_POST);
+/*print_r($_POST);
 echo '<hr>';
 print_r($_GET);
 echo '<hr>';
 print_r($_REQUEST);
-echo '<hr>';
+echo '<hr>';*/
 
 /*if (!isset($_POST['payment_id'])) {
     header("Location: index.php");
@@ -16,10 +16,18 @@ echo '<hr>';
 $titulo = '';
 $detalle = '';
 
-if ($_POST['payment_status'] === 'approved') {
+if (isset($_GET['payment_status_detail']) &&
+    isset($_GET['from']) &&
+    $_GET['from'] === 'success') {
+    $titulo = 'Pago rechazado';
+    $detalle = "Su pago ha sido rechazado: {$_GET['$_GET['payment_status_detail']']}";
+    }
+
+
+/*if ($_POST['payment_status'] === 'approved') {
     $titulo = 'Pago abrobado';
     $detalle = "Su código de pago es {$_POST['payment_id']}";
-}
+}*/
 
 
 /*
