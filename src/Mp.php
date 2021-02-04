@@ -16,6 +16,26 @@ class Mp
 
 
 
+    public function getPaymentJson(string $id, string $topic): string
+    {
+        if ($id === '' ||
+            $topic === 'payment ') {
+            return "no es pago: {$id} {$topic}";
+        }
+
+        $url = "https://api.mercadopago.com/v1/payments/{$id}?access_token={$this->token}";
+
+        $ch = curl_init();
+        $timeout = 30;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $jsonText = curl_exec($ch);
+        curl_close($ch);
+
+        return $jsonText;
+    }
+
 
     public function getBotonPago(array $settings): string
     {
