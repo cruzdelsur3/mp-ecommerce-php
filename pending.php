@@ -1,24 +1,36 @@
 <?php
 
 
-print_r($_POST);
+/*print_r($_POST);
 echo '<hr>';
 print_r($_GET);
 echo '<hr>';
 print_r($_REQUEST);
-echo '<hr>';
+echo '<hr>';*/
 
-/*if (!isset($_POST['payment_id'])) {
-    header("Location: index.php");
-    die();
-}*/
+/*array (
+    [collection_id] => 13463803642
+    [collection_status] => pending
+    [payment_id] => 13463803642
+   [status] => pending
+   [external_reference] => marcos.botta@gmail.com
+   [payment_type] => ticket
+   [merchant_order_id] => 2289146116
+   [preference_id] => 469485398-f2f8623b-89f8-4317-a2fb-138b93fef856
+   [site_id] => MLA
+   [processing_mode] => aggregator
+    [merchant_account_id] => null )
+*/
+
 
 $titulo = '';
 $detalle = '';
 
-if ($_POST['payment_status'] === 'approved') {
-    $titulo = 'Pago abrobado';
-    $detalle = "Su código de pago es {$_POST['payment_id']}";
+if ($_REQUEST['status'] === 'pending' &&
+    $_REQUEST['payment_type'] === 'ticket') {
+    $titulo = 'Pago pendiente';
+    $detalle = "<p>Se genergó el cupon de pago. Siga las instrucciones que enviamos a su email para finalizar la compra.</p>
+ <p><strong>Código Mercado Pago:</strong> {$_POST['payment_id']}</p>";
 }
 
 
