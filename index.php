@@ -182,7 +182,7 @@
 
                                                         </ul>
                                                         <button class="as-searchmoreless-toggle as-searchfilter-morebutton  as-search-more" id="iPad Compatibility_more">
-                                                            <span class="as-search-morelessbutton-text">More...</span>
+                                                            <span class="as-search-morelessbutton-text">More</span>
                                                         </button>
                                                     </div>
                                                 </materializer>

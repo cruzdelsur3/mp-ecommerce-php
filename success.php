@@ -23,9 +23,9 @@ if (isset($_POST['back_url'])) {
 $titulo = '';
 $detalle = '';
 
-if ($_POST['payment_status'] === 'approved') {
+if ($_REQUEST['status'] === 'approved') {
     $titulo = 'Pago abrobado';
-    $detalle = "Su código de pago es {$_POST['payment_id']}";
+    $detalle = "Su código de pago es {$_REQUEST['payment_id']}";
 }
 
 
