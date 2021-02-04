@@ -55,7 +55,7 @@ class Mp
 
 
         $dirName = pathinfo($_SERVER['REQUEST_URI'], PATHINFO_DIRNAME);
-        $baseUrl = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['SERVER_NAME']}{$dirName}";
+        $baseUrl = "https://{$_SERVER['SERVER_NAME']}{$dirName}";
 
         $item = new Item();
         $item->id = $this->orderId;
