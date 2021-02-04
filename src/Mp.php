@@ -135,7 +135,9 @@ codigo postal: 1111*/
 
         $preference->save();
 
-
+        $preferenceId = $preference->id;
+        file_put_contents('id.html', "ID: {$preferenceId}<br>
+", FILE_APPEND);
 
         // var_dump($preference);
 
@@ -147,7 +149,7 @@ codigo postal: 1111*/
   <script
    src="' . $this->urlChekoutJs . '"
    data-button-label="Pagar la compra"
-   data-preference-id="' . $preference->id . '">
+   data-preference-id="' . $preferenceId . '">
   </script>
 </form>
 </div><br>';
