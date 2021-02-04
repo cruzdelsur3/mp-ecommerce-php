@@ -29,7 +29,7 @@ $detalle = '';
 if ($_REQUEST['status'] === 'pending' &&
     $_REQUEST['payment_type'] === 'ticket') {
     $titulo = 'Pago pendiente';
-    $detalle = "<p>Se genergó el cupon de pago. Siga las instrucciones que enviamos a su email para finalizar la compra.</p>
+    $detalle = "<p>Se genergó el cupón de pago. Siga las instrucciones enviadas a su email para finalizar la compra.</p>
 <br>
  <p><strong>Código Mercado Pago:</strong> {$_REQUEST['payment_id']}</p>";
 }
