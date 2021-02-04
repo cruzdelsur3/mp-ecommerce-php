@@ -23,7 +23,10 @@ if (isset($_POST['back_url'])) {
 $titulo = '';
 $detalle = '';
 
-if ($_REQUEST['status'] === 'approved') {
+if (isset($_REQUEST['status']) &&
+    $_REQUEST['status'] === 'approved' ||
+   isset($_REQUEST['collection_status']) &&
+    $_REQUEST['collection_status'] === 'approved') {
     $titulo = 'Pago abrobado';
     $detalle = "Su código de pago es {$_REQUEST['payment_id']}. Collection ID: {$_REQUEST['collection_id']}. External Reference: {$_REQUEST['external_reference']}";
 }

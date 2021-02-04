@@ -85,7 +85,7 @@ codigo postal: 1111*/
         $preference->payer = $payer;
 
         $preference->external_reference = 'marcos.botta@gmail.com';
-        $preference->notification_url = "{$baseUrl}webhook.php";
+        $preference->notification_url = Format::cleanPath("{$baseUrl}/webhook.php");
 
 
         $backUrlSuccess = Format::cleanPath("{$baseUrl}/success.php");
