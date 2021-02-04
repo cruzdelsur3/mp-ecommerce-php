@@ -42,7 +42,7 @@ class Mp
         $item->title = $settings['title'];
         $item->description = 'Dispositivo móvil de Tienda e-commerce';
         $imgUrl = preg_replace('~\.\/~', '',$settings['img']);
-        $item->picture_url = "{$baseUrl}/{$imgUrl}";
+        $item->picture_url = Format::cleanPath("{$baseUrl}/{$imgUrl}");
         $item->quantity = $settings['unit'];
         $item->unit_price = $settings['price'];
         $items[] = $item;
