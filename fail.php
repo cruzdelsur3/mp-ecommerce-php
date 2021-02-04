@@ -20,7 +20,7 @@ if (isset($_GET['payment_status_detail']) &&
     isset($_GET['from']) &&
     $_GET['from'] === 'success') {
     $titulo = 'Pago rechazado';
-    $detalle = "Su pago ha sido rechazado: {$_GET['$_GET['payment_status_detail']']}";
+    $detalle = "Su pago ha sido rechazado: {$_GET['payment_status_detail']}";
     }
 
 
