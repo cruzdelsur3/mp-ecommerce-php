@@ -6,6 +6,8 @@ $get = print_r($_GET, true);
 
 
 $log = "
+<br>
+<hr>
 REQUEST<BR>
 {$request}<br>
 <br>
@@ -16,4 +18,4 @@ GET<BR>
 {$get}<br>
 <br>";
 
-file_put_contents('webhook.html', $log);
+file_put_contents('webhook.html', $log, FILE_APPEND);
