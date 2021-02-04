@@ -88,9 +88,9 @@ codigo postal: 1111*/
         $preference->notification_url = "{$baseUrl}webhook.php";
 
 
-        $backUrlSuccess = "{$baseUrl}success.php";
-        $backUrlFail = "{$baseUrl}fail.php";
-        $backUrlPending = "{$baseUrl}pending.php";
+        $backUrlSuccess = Format::cleanPath("{$baseUrl}/success.php");
+        $backUrlFail = Format::cleanPath("{$baseUrl}/fail.php");
+        $backUrlPending = Format::cleanPath("{$baseUrl}/pending.php");
 
 
 
