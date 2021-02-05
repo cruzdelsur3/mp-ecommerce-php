@@ -9,7 +9,13 @@ $post = print_r($_POST, true);
 $get = print_r($_GET, true);
 $dateTime = date('Y-m-d H:i:s');
 
-$bodyText = file_get_contents('php//input');
+$bodyText = file_get_contents('php://input');
+
+
+//  [id] => 2294363858 [topic] => merchant_order
+//  [data_id] => 13494585540 [type] => payment
+//  [id] => 13494585540 [topic] => payment
+//  [id] => 2294363858 [topic] => merchant_order
 
 $mp = new src\Mp();
 $jsonPayment = 'no llama';
