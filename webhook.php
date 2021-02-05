@@ -9,12 +9,15 @@ $post = print_r($_POST, true);
 $get = print_r($_GET, true);
 $dateTime = date('Y-m-d H:i:s');
 
+$bodyText = file_get_contents('php//input');
+
 $mp = new src\Mp();
 $jsonPayment = 'no llama';
 if (isset($_REQUEST['id']) &&
     isset($_REQUEST['topic'])) {
     $jsonPayment = $mp->getPaymentJson($_REQUEST['id'], $_REQUEST['topic']);
 }
+
 
 
 // echo var_dump(json_decode($jsonPayment)); die();
@@ -33,10 +36,11 @@ POST<BR>
 GET<BR>
 {$get}<br>
 <br>
+BODY TEXT<BR>
+{$bodyText}<br>
+<br>
 JSON<BR>
 {$jsonPayment}<br>
 <br>";
-
-
 
 file_put_contents('webhook.html', $log, FILE_APPEND);

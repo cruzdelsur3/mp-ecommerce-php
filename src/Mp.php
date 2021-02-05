@@ -97,9 +97,10 @@ codigo postal: 1111*/
         );*/
 
         $payer->address = [
-            "street_name" => "false",
-            "street_number" => 123,
             "zip_code" => "1111",
+            "street_name" => "False",
+            "street_number" => 123,
+
         ];
 
         $preference->payer = $payer;
@@ -136,11 +137,13 @@ codigo postal: 1111*/
         $preference->save();
 
 
+
+
         $preferenceId = $preference->id;
         file_put_contents('id.html', "ID: {$preferenceId}<br>
 ", FILE_APPEND);
 
-        // var_dump($preference);
+        var_dump($preference);
 
         return '<a href="' . $preference->init_point . '">Pagar la compra</a>';
 
