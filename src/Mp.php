@@ -96,10 +96,16 @@ codigo postal: 1111*/
             "number" => "12345678"
         );*/
 
-        $payer->address = array(
+        /*$payer->address = array(
             "street_name" => "False",
             "street_number" => 123,
             "zip_code" => "1111"
+        );*/
+
+        $payer->address = array(
+            "street_name" => "Soler",
+            "street_number" => 1554,
+            "zip_code" => "3080"
         );
 
         // $payer->save();
