@@ -99,8 +99,7 @@ codigo postal: 1111*/
         $payer->address = [
             "zip_code" => "1111",
             "street_name" => "False",
-            "street_number" => 123,
-
+            "street_number" => "123",
         ];
 
         $preference->payer = $payer;
