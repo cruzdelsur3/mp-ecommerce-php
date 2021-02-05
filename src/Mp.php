@@ -97,10 +97,14 @@ codigo postal: 1111*/
         );*/
 
         $payer->address = array(
-            "street_name" => false,
+            "street_name" => "False",
             "street_number" => 123,
             "zip_code" => "1111"
         );
+
+        $payer->save();
+
+
 
         $preference->payer = $payer;
 
